@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Genre, Book
-#from cart.forms import CartAddProductForm
+from cart.forms import CartAddProductForm
 
 
 def book_list(request, genre_slug=None):
