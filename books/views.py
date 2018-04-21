@@ -17,9 +17,9 @@ def book_list(request, genre_slug=None):
 
 def book_detail(request, id, slug):
     book = get_object_or_404(Book, id=id, slug=slug, available=True)
-#    cart_book_form = CartAddProductForm()
+    cart_book_form = CartAddProductForm()
     return render(request,
                   'books/book/detail.html',
-                  # {'book': book,
-                  #  'cart_book_form': cart_book_form})
-                  {'book': book})
+                   {'book': book,
+                    'cart_book_form': cart_book_form})
+                  #{'book': book})

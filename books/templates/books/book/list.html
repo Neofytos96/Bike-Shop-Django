@@ -20,7 +20,7 @@
         </ul>
     </div>
     <div id="main" class="book-list">
-        <h1>{% if genre %}{{ genre.name }}{% else %}books{% endif %}</h1>
+        <h1>{% if genre %}{{ genre.name }}{% else %}Books{% endif %}</h1>
         {% for book in books %}
             <div class="item">
                 <a href="{{ book.get_absolute_url }}">
