@@ -23,11 +23,13 @@
         <h1>{% if genre %}{{ genre.name }}{% else %}Books{% endif %}</h1>
         {% for book in books %}
             <div class="item">
-                <a href="{{ book.get_absolute_url }}">
-                    <img src="{% if book.image %}{{ book.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                {% for b in Books %}
+                <a href="{{ b.get_absolute_url }}">
+                    <img src="{% if b.image %}{{ b.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
                 </a>
-                <a href="{{ book.get_absolute_url }}">{{ book.name }}</a><br>
-                ${{ book.price }}
+                <a href="{{ b.get_absolute_url }}">{{ b.name }}</a><br>
+                ${{ b.price }}
+                {% endfor %}
             </div>
         {% endfor %}
     </div>
