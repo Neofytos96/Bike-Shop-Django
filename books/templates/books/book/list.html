@@ -14,7 +14,7 @@
             </li>
         {% for c in genres %}
             <li {% if genre.slug == c.slug %}class="selected"{% endif %}>
-                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                <a href="{{ c.get_absolute_url_genre }}">{{ c.name }}</a>
             </li>
         {% endfor %}
         </ul>

@@ -47,3 +47,10 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         return reverse('books:book_detail', args=[self.id, self.slug])
+
+    def get_absolute_url_genre(self):
+        return reverse('genres:book_list_by_genre', args=[self.id, self.slug])
+
+
+
+
