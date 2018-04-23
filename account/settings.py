@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'books',
     'cart',
+    'orders',
     'account',
 ]
 
@@ -90,9 +91,9 @@ WSGI_APPLICATION = 'mystore.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
+        'NAME': 'scmne',
+        'USER': 'scmne',
+        'PASSWORD': 'RinLia',
         'HOST': 'csmysql.cs.cf.ac.uk',
         'PORT': '3306',
         'OPTIONS': {
@@ -150,6 +151,13 @@ INTERNAL_IPS = ['127.0.0.1']
 #LAB2 : adding cart
 CART_SESSION_ID = 'cart'
 
+#LAB2 : adding login and registration
+#LOGIN_URL = 'login'
+#LOGOUT_URL = 'logout'
+
 #LAB2 : redirect to home page after successful login
 LOGIN_REDIRECT_URL = '/'
+
+#use own auth_user_model
+#AUTH_USER_MODEL = 'account.MyUser'
 
