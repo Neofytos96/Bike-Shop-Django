@@ -11,7 +11,7 @@
         <ul>
             <li {% if not genre %}class="selected"{% endif %}>
                 <a href="{% url "books:book_list" %}">All</a>
-                <a href="{% url "account:sign_up" %}">sign Up</a>
+                <a href="{% url "account:signup" %}">sign Up</a>
 
             </li>
         {% for c in genres %}
