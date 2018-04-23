@@ -1,8 +1,9 @@
 {% extends "books/base.html" %}
 
 {% block content %}
-<p>Your are logged out!</p>  
-
-<p><a href="{% url 'account:login'%}">Click here to log in again.</a></p>
+	<p> You are logged out!</p>
+	<p>
+	<a href="{% url 'account:login' %}">Click here to log in again</a>
+	</p>
 
 {% endblock %}

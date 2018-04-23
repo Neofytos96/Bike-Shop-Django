@@ -24,7 +24,6 @@ SECRET_KEY = 'v*%&iu#ge7-+7()+9)&*1r5fg^_$2=(^8sb9b*z!oidk@dbq!g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-#DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -90,9 +89,9 @@ WSGI_APPLICATION = 'mystore.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
+        'NAME': 'c1615033',
+        'USER': 'c1615033',
+        'PASSWORD': 'xvVra4xADkCT',
         'HOST': 'csmysql.cs.cf.ac.uk',
         'PORT': '3306',
         'OPTIONS': {
@@ -120,6 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -138,6 +138,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
