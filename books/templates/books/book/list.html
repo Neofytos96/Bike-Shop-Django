@@ -26,11 +26,11 @@
             <div class="item">
              
 
-                <a href="{{ b.get_absolute_url }}">
-                    <img src="{% if b.image %}{{ b.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                <a href="{{ book.get_absolute_url }}">
+                    <img src="{% if book.image %}{{ book.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
                 </a>
-                <a href="{{ b.get_absolute_url }}">{{ b.name }}</a><br>
-                ${{ b.price }}
+                <a href="{{ book.get_absolute_url }}">{{ book.name }}</a><br>
+                ${{ book.price }}
                 
             </div>
         {% endfor %}
