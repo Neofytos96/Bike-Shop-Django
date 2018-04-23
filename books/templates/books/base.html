@@ -12,6 +12,7 @@
     </div>
     <div id="subheader">
         <div class="cart">
+            {{ user.get_full_name }}
             {% with total_items=cart|length %}
                 
                
