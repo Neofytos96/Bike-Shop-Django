@@ -11,7 +11,7 @@
         <a href="/" class="logo">Store</a>
     </div>
     <div id="memberHeader">
-    	{{ user.get_full_name }} Welcome!
+    	{{ account:check_member }} Welcome!<br>
     	<a href="{% url "account:signup" %}">Not a member? Register!</a><br>
     	<a href="{% url "account:login" %}">Login</a>
 
