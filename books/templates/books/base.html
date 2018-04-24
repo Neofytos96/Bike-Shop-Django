@@ -12,7 +12,7 @@
     </div>
     <div id="memberHeader">
 
-        {{ user.get_user_label }} Welcome!<br>
+        this is the user: {{ account.get_user_label }} Welcome!<br>
     	<a href="{% url "account:signup" %}">Not a member? Register!</a><br>
     	<a href="{% url "account:login" %}">Login</a>
 
