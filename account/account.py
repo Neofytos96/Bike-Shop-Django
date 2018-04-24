@@ -8,4 +8,4 @@ class Account(object):
         Initialize the cart.
         """
     def get_full_name(self):
-        return "this is full name"
+        return render(request.user.get_full_name)
