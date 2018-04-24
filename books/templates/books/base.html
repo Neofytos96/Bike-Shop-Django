@@ -11,7 +11,7 @@
         <a href="/" class="logo">Store</a>
     </div>
     <div id="memberHeader">
-    	{% user.is_authenticated() %}
+    	{% account:check_member %}
         correct
         {% else %}
         not correct
