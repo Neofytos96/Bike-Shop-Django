@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    {{ book.name }}
+   {% if genre %} {{genre.title}} {% else %}Books{% endif %}
 {% endblock %}
 
 {% block content %}
