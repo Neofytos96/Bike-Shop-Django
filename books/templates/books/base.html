@@ -11,13 +11,13 @@
         <a href="/" class="logo">Store</a>
     </div>
     <div id="memberHeader">
-
+{% if user.is_authenticated %}
          Welcome! this is the user: {{ account.get_user_label }} <br>
-        <a href="{% url "order:order_create" %}" class="button">Checkout!</a><br>
+        {% else %}
     	<a href="{% url "account:signup" %}">Not a member? Register!</a><br>
     	<a href="{% url "account:login" %}">Login</a><br>
         <a href="{% url "account:logout" %}">Logout</a>
-
+{% endif %}
     </div>
     <div id="subheader">
         <div class="cart">
