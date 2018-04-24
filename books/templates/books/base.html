@@ -13,8 +13,9 @@
     <div id="memberHeader">
 
          Welcome! this is the user: {{ account.get_user_label }} <br>
+        <a href="{% url "order:order_create" %}" class="button">Checkout!</a><br>
     	<a href="{% url "account:signup" %}">Not a member? Register!</a><br>
-    	<a href="{% url "account:login" %}">Login</a>
+    	<a href="{% url "account:login" %}">Login</a><br>
         <a href="{% url "account:logout" %}">Logout</a>
 
     </div>
