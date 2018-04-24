@@ -11,7 +11,12 @@
         <a href="/" class="logo">Store</a>
     </div>
     <div id="memberHeader">
-    	{{ account:check_member }} Welcome!<br>
+    	{% user.is_authenticated() %}
+        correct
+        {% else %}
+        not correct
+        {% endif %}
+        {{ user.get_full_name }} Welcome!<br>
     	<a href="{% url "account:signup" %}">Not a member? Register!</a><br>
     	<a href="{% url "account:login" %}">Login</a>
 
