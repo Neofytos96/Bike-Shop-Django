@@ -12,7 +12,7 @@
     </div>
     <div id="subheader">
         <div class="cart">
-            {% user.get_full_name %} Welcome!
+            {{ user.get_full_name }} Welcome!
             {% with total_items=cart|length %}
                 
                
