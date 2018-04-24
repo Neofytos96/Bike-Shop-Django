@@ -12,9 +12,10 @@
     </div>
     <div id="memberHeader">
 {% if user.is_authenticated %}
-         <p>Welcome {{ user.username }} !!!</p>  <br>
+         <p>Welcome {{ user.username }}!</p>  <br>
          <a href="{% url "account:logout" %}">Logout</a>
         {% else %}
+        <p> Welcome Guest! </p>
     	<a href="{% url "account:signup" %}">Not a member? Register!</a><br>
     	<a href="{% url "account:login" %}">Login</a><br>
         
