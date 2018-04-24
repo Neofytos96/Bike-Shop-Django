@@ -12,7 +12,7 @@
     </div>
     <div id="memberHeader">
 {% if user.is_authenticated %}
-         Welcome! {{user.get_full_name}} <br>
+         Welcome {{request.user.first_name}}, ! <br>
          <a href="{% url "account:logout" %}">Logout</a>
         {% else %}
     	<a href="{% url "account:signup" %}">Not a member? Register!</a><br>
