@@ -22,9 +22,7 @@ def signup(request):
 
 def check_member(request):
     if request.user.is_authenticated():
-       # user_id = request.user.id
-        #current_user_object = User.objects.get(id=user_id)
-         return render(request, 'account/signin.html')   
+        return True   
         
     else:
-        return render(request, 'account/signup.html')
+        return False
