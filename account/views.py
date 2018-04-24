@@ -17,3 +17,13 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'account/signup.html', {'form': form})
+
+
+def check_member(request):
+    if request.user.is_authenticated():
+        user_id = request.user.id
+        current_user_object = User.objects.get(id=user_id)
+            
+        
+    else:
+        return render(request, 'order/order/create-login.html')
