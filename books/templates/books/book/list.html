@@ -13,7 +13,7 @@
                 <a href="{% url "books:book_list" %}">All</a>
             </li>
         {% for c in genres %}
-        <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+       <p> <a href="{{ c.name.get_absolute_url }}">{{ c.name }}</a></p>
             <li {% if genre.slug == c.slug %}class="selected"{% endif %}>
                 <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
             </li>
