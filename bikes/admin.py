@@ -16,6 +16,6 @@ class BikeAdmin(admin.ModelAdmin):
 admin.site.register(Bike, BikeAdmin)
 
 class BrandAdmin(admin.ModelAdmin):
-    list_display = ['brand_name', 'second_name', 'slug']
-    prepopulated_fields = {'slug': ('brand_name',)}
+    list_display = ['first_name', 'last_name', 'slug']
+    prepopulated_fields = {'slug': ('last_name',)}
 admin.site.register(Brand, BrandAdmin)
