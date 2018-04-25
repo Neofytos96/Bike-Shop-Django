@@ -9,7 +9,7 @@ class Brand(models.Model):
     slug = models.SlugField(max_length=30, db_index = True)
 
     def __str__(self):
-        return '%s %s' % (self.brand_name)
+        return '%s %s' % (self.brand_name, self.initials)
 
 class Category(models.Model):
     category = models.CharField(max_length = 50)
