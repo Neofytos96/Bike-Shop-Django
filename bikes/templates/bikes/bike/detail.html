@@ -16,6 +16,11 @@
         	{% csrf_token %}
         	<input type="submit" value="Add to cart">
         </form>
+        <form action="{% url "review:add_review" bike.id %}" method="post">
+            {{cart_bike_form}}
+            {% csrf_token %}
+            <input type="submit" value="Add to review">
+        </form>
         {{ bike.description|linebreaks }}
     </div>
 {% endblock %}
