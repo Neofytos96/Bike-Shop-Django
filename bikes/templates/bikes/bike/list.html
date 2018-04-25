@@ -15,7 +15,8 @@
         {% for c in brands %}
             <a href="{{ c.name }}">{{ c.name }}</a>
             <li {% if brand.slug == c.slug %}class="selected"{% endif %}>
-                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                <a href="{{ c.get_absolute_url }}"><p>{{ c.name }}</p></a>
+               
             </li>
         {% endfor %}
         </ul>
