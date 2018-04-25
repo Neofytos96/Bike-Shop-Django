@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block title %}
-   {% if category %} {{category.title}} {% else %}Bikes{% endif %}
+   {% if brand %} {{brand.title}} {% else %}Bikes{% endif %}
 {% endblock %}
 
 {% block content %}
     <div class="bike-detail">
         <img src="{% if bike.image %}{{ bike.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
         <h1>{{ bike.name }}</h1>
-        <h2><a href="{{ bike.category.get_absolute_url }}">{{ bike.category }}</a></h2>
+        <h2><a href="{{ bike.brand.get_absolute_url }}">{{ bike.brand }}</a></h2>
         <p class="price">${{ bike.price }}</p>
         <form action="{% url "cart:cart_add" bike.id %}" method="post">
         	{{cart_book_form}}
