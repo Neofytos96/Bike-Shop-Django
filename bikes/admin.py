@@ -1,6 +1,6 @@
 #adapted from https://github.com/guinslym/django-by-example-book
 from django.contrib import admin
-from .models import Bike, Brand, Category
+from .models import Bike, Category
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['category', 'slug']
