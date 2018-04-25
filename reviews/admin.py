@@ -7,7 +7,7 @@ class ReviewItemInline(admin.TabularInline):
     raw_id_fields = ['bike']
 
 
-class OrderAdmin(admin.ModelAdmin):
+class ReviewAdmin(admin.ModelAdmin):
     list_display = ['user', 'review', 'pub_date', 'bike']
     list_filter = ['review', 'pub_date', 'bike']
     inlines = [ReviewItemInline]
