@@ -1,0 +1,39 @@
+{% extends "bikes/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Bikes{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div id="sidebar">
+        <h3>Categories</h3>
+        <ul>
+            <li {% if not category %}class="selected"{% endif %}>
+                <a href="{% url "bikes:bike_list" %}">All</a>
+            </li>
+        {% for c in categories %}
+            <a href="{{ c.name }}">{{ c.name }}</a>
+            <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div id="main" class="bike-list">
+
+        <h1>{% if category %}{{ category.name }}{% else %}Bikes{% endif %}</h1>
+        {% for bike in bikes %}
+            <div class="item">
+                <a href="{{ bike.get_absolute_url }}">
+                    <img src="{% if bike.image %}{{ bike.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                </a>
+                <a href="{{ bike.get_absolute_url }}">{{ bike.name }}</a><br>
+                ${{ bike.price }}
+                
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+    </div>
+{% endblock %}

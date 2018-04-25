@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'books',
-    'cart',
-    'orders',
     'account',
+    'bikes',
+    'cart',
+    'order',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
 ]
 
-ROOT_URLCONF = 'mystore.urls'
+ROOT_URLCONF = 'podilatostore.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mystore.wsgi.application'
+WSGI_APPLICATION = 'podilatostore.wsgi.application'
 
 
 # Database
@@ -88,12 +88,13 @@ WSGI_APPLICATION = 'mystore.wsgi.application'
 #     }
 # }
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'scmne',
-        'USER': 'scmne',
-        'PASSWORD': 'RinLia',
+        'NAME': 'c1615033',
+        'USER': 'c1615033',
+        'PASSWORD': 'xvVra4xADkCT',
         'HOST': 'csmysql.cs.cf.ac.uk',
         'PORT': '3306',
         'OPTIONS': {
@@ -151,13 +152,5 @@ INTERNAL_IPS = ['127.0.0.1']
 #LAB2 : adding cart
 CART_SESSION_ID = 'cart'
 
-#LAB2 : adding login and registration
-#LOGIN_URL = 'login'
-#LOGOUT_URL = 'logout'
-
 #LAB2 : redirect to home page after successful login
 LOGIN_REDIRECT_URL = '/'
-
-#use own auth_user_model
-#AUTH_USER_MODEL = 'account.MyUser'
-

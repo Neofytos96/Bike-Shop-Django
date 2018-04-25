@@ -1,6 +1,6 @@
 from decimal import Decimal
 from django.conf import settings
-from books.models import Book
+from bikes.models import Bike
 
 
 class Cart(object):
@@ -26,38 +26,38 @@ class Cart(object):
         """
         Iterate over the items in the cart and get the books from the database.
         """
-        book_ids = self.cart.keys()
+        bike_ids = self.cart.keys()
         # get the book objects and add them to the cart
-        books = Book.objects.filter(id__in = book_ids)
-        for book in books:
-            self.cart[str(book.id)]['book'] = book
+        bikes = Bike.objects.filter(id__in = bike_ids)
+        for bike in bikes:
+            self.cart[str(bike.id)]['bike'] = bike
 
         for item in self.cart.values():
             item['price'] = Decimal(item['price'])
             item['total_price'] = item['price'] * item['quantity']
             yield item
 
-    def add(self, book, quantity=1, update_quantity=False):
+    def add(self, bike, quantity=1, update_quantity=False):
         """
         Add a book to the cart or update its quantity.
         """
-        book_id = str(book.id)
-        if book_id not in self.cart:
-            self.cart[book_id] = {'quantity': 0,
-                                      'price': str(book.price)}
+        bike_id = str(bike.id)
+        if bike_id not in self.cart:
+            self.cart[bike_id] = {'quantity': 0,
+                                      'price': str(bike.price)}
         if update_quantity:
-            self.cart[book_id]['quantity'] = quantity
+            self.cart[bike_id]['quantity'] = quantity
         else:
-            self.cart[book_id]['quantity'] += quantity
+            self.cart[bike_id]['quantity'] += quantity
         self.save()
 
-    def remove(self, book):
+    def remove(self, bike):
         """
         Remove a book from the cart.
         """
-        book_id = str(book.id)
-        if book_id in self.cart:
-            del self.cart[book_id]
+        bike_id = str(bike.id)
+        if bike_id in self.cart:
+            del self.cart[bike_id]
             self.save()
 
     def save(self):

@@ -1,4 +1,4 @@
-{% extends "books/base.html" %}
+{% extends "bikes/base.html" %}
 {% load static %}
 
 {% block title %}
@@ -11,7 +11,7 @@
         <thead>
             <tr>
                 <th>Image</th>
-                <th>Book</th>
+                <th>Bike</th>
                 <th>Quantity</th>
                 <th>Remove</th>
                 <th>Unit price</th>                
@@ -20,23 +20,23 @@
         </thead>
         <tbody>
         {% for item in cart %}
-            {% with book=item.book %}
+            {% with bike=item.bike %}
             <tr>
                 <td>
-                    <a href="{{ book.get_absolute_url }}">
-                        <img src="{% if book.image %}{{ book.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                    <a href="{{ bike.get_absolute_url }}">
+                        <img src="{% if bike.image %}{{ bike.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
                     </a>
                 </td>
-                <td>{{ book.title }}</td>
+                <td>{{ bike.title }}</td>
                 <td>
-                    <form action="{% url "cart:cart_add" book.id %}" method="post">
+                    <form action="{% url "cart:cart_add" bike.id %}" method="post">
                         {{ item.update_quantity_form.quantity }}
                         {{ item.update_quantity_form.update }}
                         <input type="submit" value="Update">
                         {% csrf_token %}
                     </form>
                 </td>
-                <td><a href="{% url "cart:cart_remove" book.id %}">Remove</a></td>
+                <td><a href="{% url "cart:cart_remove" bike.id %}">Remove</a></td>
                 <td class="num">${{ item.price }}</td>
                 <td class="num">${{ item.total_price }}</td>
             </tr>
@@ -55,7 +55,7 @@
         {{ user.username }}
      {{ request.user.address }}</p>
     <p class="text-right">
-        <a href="{% url "books:book_list" %}" class="button light">Continue shopping</a>
+        <a href="{% url "bikes:bike_list" %}" class="button light">Continue shopping</a>
         <a href="{% url "order:order_create" %}" class="button">Checkout!</a>
     </p>
 {% endblock %}
