@@ -26,7 +26,7 @@
         <h1>{% if brand %}{{ brand }}{% else %}Bikes{% endif %}</h1>
         {% for bike in bikes %}
             <div class="item">
-                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                {% if forloop.counter|divisibleby:2 %}
                 <a href="{{ bike.get_absolute_url }}">
                     <img src="{% if bike.image %}{{ bike.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
                 </a>
