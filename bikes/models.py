@@ -4,13 +4,12 @@ from django.core.urlresolvers import reverse
 
 class Brand(models.Model):
     brand_name = models.CharField(max_length = 20)
-    initials = models.CharField(max_length = 20)
-
+    second_name = models.CharField(max_length = 30)
     slug = models.SlugField(max_length=30, db_index = True)
 
     def __str__(self):
-        return '%s %s' % (self.brand_name, self.initials)
-
+        return '%s %s' % (self.brand_name, self.second_name)
+        
 class Category(models.Model):
     category = models.CharField(max_length = 50)
     slug = models.SlugField(max_length = 50, db_index = True, unique = True)
