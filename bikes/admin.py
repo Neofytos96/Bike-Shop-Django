@@ -9,7 +9,7 @@ admin.site.register(Category, CategoryAdmin)
 
 
 class BikeAdmin(admin.ModelAdmin):
-    list_display = ['title', 'slug', 'brand', 'category', 'price', 'stock', 'available', 'release_date']
+    list_display = ['title', 'slug', 'brands', 'category', 'price', 'stock', 'available', 'release_date']
     list_filter = ['available', 'release_date', 'category']
     list_editable = ['price', 'stock', 'available']
     prepopulated_fields = {'slug': ('title',)}
