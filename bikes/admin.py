@@ -5,7 +5,7 @@ from .models import Bike, Brand, Category
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['category', 'slug']
     prepopulated_fields = {'slug': ('category',)}
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(Genre, CategoryAdmin)
 
 
 class BikeAdmin(admin.ModelAdmin):

@@ -12,7 +12,7 @@
         <h2><a href="{{ bike.category.get_absolute_url }}">{{ bike.category }}</a></h2>
         <p class="price">${{ bike.price }}</p>
         <form action="{% url "cart:cart_add" bike.id %}" method="post">
-        	{{cart_bike_form}}
+        	{{cart_book_form}}
         	{% csrf_token %}
         	<input type="submit" value="Add to cart">
         </form>

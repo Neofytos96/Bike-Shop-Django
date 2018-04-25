@@ -16,7 +16,7 @@ def bike_list(request, category_slug=None):
 
 
 def bike_detail(request, id, slug):
-    bikes = get_object_or_404(Bike, id=id, slug=slug, available=True)
+    bike = get_object_or_404(Bike, id=id, slug=slug, available=True)
     cart_bike_form = CartAddProductForm()
     return render(request,
                   'bikes/bike/detail.html',

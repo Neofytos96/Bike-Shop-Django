@@ -9,14 +9,14 @@ class Brand(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.first_name, self.last_name)
-        
+
 class Category(models.Model):
     category = models.CharField(max_length = 50)
     slug = models.SlugField(max_length = 50, db_index = True, unique = True)
 
     class Meta:
         ordering = ('category',)
-        verbose_name = 'category'
+        verbose_name = 'categoru'
         verbose_name_plural = 'categories'
 
     def __str__(self):
