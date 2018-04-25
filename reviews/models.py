@@ -26,7 +26,7 @@ class Review(models.Model):
         (4, '4'),
         (5, '5'),
     )
-    wine = models.ForeignKey(Wine)
+    bike = models.ForeignKey(Bike)
     pub_date = models.DateTimeField('date published')
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
