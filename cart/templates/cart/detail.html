@@ -49,7 +49,11 @@
         </tr>
         </tbody>
     </table>
-    <p> {{ user.first_name }} {{ user.address }}</p>
+    <p> {{ user.first_name }}
+        {{ user.email }}
+        {{ user.city }}
+        {{ user.username }}
+     {{ request.user.address }}</p>
     <p class="text-right">
         <a href="{% url "books:book_list" %}" class="button light">Continue shopping</a>
         <a href="{% url "order:order_create" %}" class="button">Checkout!</a>
