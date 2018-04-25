@@ -23,7 +23,7 @@
     </div>
     <div id="main" class="bike-list">
 
-        <h1>{% if brand %}{{ brand.name }}{% else %}Bikes{% endif %}</h1>
+        <h1>{% if brand %}{{ brand }}{% else %}Bikes{% endif %}</h1>
         {% for bike in bikes %}
             <div class="item">
                 <a href="{{ bike.get_absolute_url }}">
