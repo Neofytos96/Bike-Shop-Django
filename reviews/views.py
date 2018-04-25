@@ -42,13 +42,11 @@ def add_review(request, bike_id):
     bike = get_object_or_404(Bike, pk=bike_id)
     form = ReviewForm(request.POST)
     if form.is_valid():
-        rating = form.cleaned_data['rating']
         comment = form.cleaned_data['comment']
         user_name = form.cleaned_data['user_name']
         review = Review()
         review.bike = bike
         review.user_name = user_name
-        review.rating = rating
         review.comment = comment
         review.pub_date = datetime.datetime.now()
         review.save()
