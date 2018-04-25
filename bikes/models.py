@@ -4,6 +4,8 @@ from django.core.urlresolvers import reverse
 
 class Brand(models.Model):
     brand_name = models.CharField(max_length = 20)
+    initials = models.CharField(max_length = 20)
+
     slug = models.SlugField(max_length=30, db_index = True)
 
     def __str__(self):
