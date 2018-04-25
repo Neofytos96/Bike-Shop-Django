@@ -2,13 +2,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 
-class Brand(models.Model):
-    first_name = models.CharField(max_length = 20)
-    last_name = models.CharField(max_length = 30)
-    slug = models.SlugField(max_length=30, db_index = True)
-
-    def __str__(self):
-        return '%s %s' % (self.first_name, self.last_name)
 
 class Category(models.Model):
     category = models.CharField(max_length = 50)
@@ -29,7 +22,6 @@ class Bike(models.Model):
     category = models.ForeignKey(Category, related_name='bikes')
     title = models.CharField(max_length = 100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
-    brands = models.ForeignKey(Brand)
 #   image = models.ImageField(upload_to='books/%Y/%m/%d', blank=True)
     image = models.ImageField(upload_to='bikes/bikes_img', blank=True)
     description = models.TextField(blank = True, null = True)
