@@ -23,11 +23,11 @@ def review_detail(request, review_id):
 
 
 
-def add_review(request, bike_id):
-    #cart = Cart(request)
-    bike = get_object_or_404(Bike, id=bike_id)
-    #user_id = request.user.id
-    #current_user_object = User.objects.get(id=user_id)
+def add_review(request):
+    cart = Cart(request)
+    #bike = get_object_or_404(Bike, id=bike_id)
+    user_id = request.user.id
+    current_user_object = User.objects.get(id=user_id)
     form = ReviewCreateForm(request.POST)
     if form.is_valid():
         comment = form.cleaned_data['comment']
@@ -41,7 +41,7 @@ def add_review(request, bike_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('reviews:review_detail', args=(bike.id,)))
-
-    return render(request, 'reviews/cerate.html', {'bike': bike, 'form': form})
-
+        #return HttpResponseRedirect(reverse('reviews:bike_detail', args=(bike.id,)))
+        return render (request, 'reviews/reviews/created.html',{'review':review})
+    else:
+        return render(request, 'reviews/reviews/create_review.html')
