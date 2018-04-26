@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from .models import Review
 from bikes.models import Bike
-from .forms import ReviewForm
+from .forms import ReviewCreateForm
 import datetime
 
 
