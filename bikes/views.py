@@ -10,7 +10,7 @@ def bike_list(request, brand_slug=None):
     if brand_slug:
         brand = get_object_or_404(Brand, slug=brand_slug)
         bikes = bikes.filter(brand=brand)
-       
+       # bikes.order_by(-local_stock)
     return render(request, 'bikes/bike/list.html', {'brand': brand,
                                                       'brands': brands,
                                                       'bikes': bikes})
