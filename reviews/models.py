@@ -19,7 +19,7 @@ class Review(models.Model):
     rating = models.IntegerField(choices=RATING_CHOICES)
 
     class Meta:
-        reviewing = ('-created',)
+        ordering = ('-created',)
 
     def __str__(self):
         return 'Review {}'.format(self.id)
