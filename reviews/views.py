@@ -6,6 +6,8 @@ from bikes.models import Bike
 from .forms import ReviewCreateForm
 import datetime
 from cart.cart import Cart
+from django.contrib.auth.models import User
+
 
 
 def review_list(request):
