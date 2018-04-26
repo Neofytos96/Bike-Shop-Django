@@ -17,10 +17,10 @@ class Review(models.Model):
     rating = models.IntegerField(choices=RATING_CHOICES)
 
     class Meta:
-        reviewing = ('-created',)
+        ordering = ('-created',)
 
     def __str__(self):
-        return 'Order {}'.format(self.id)
+        return 'Review {}'.format(self.id)
 
 class ReviewItem(models.Model):
     review = models.ForeignKey(Review, related_name='items')
