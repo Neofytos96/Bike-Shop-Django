@@ -23,7 +23,7 @@ class Bike(models.Model):
     title = models.CharField(max_length = 100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
    # image = models.ImageField(upload_to='bikes/%Y/%m/%d', blank=True)
-    image = models.ImageField(upload_to='bikes/static/img/bikes_img', blank=True)
+    image = models.ImageField(upload_to='bikes/bikes_img', blank=True)
     description = models.TextField(blank = True, null = True)
     release_date = models.DateField()
     price = models.DecimalField(decimal_places=2, max_digits=10)
