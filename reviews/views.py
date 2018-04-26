@@ -5,6 +5,7 @@ from .models import Review
 from bikes.models import Bike
 from .forms import ReviewCreateForm
 import datetime
+from cart.cart import Cart
 
 
 def review_list(request):
