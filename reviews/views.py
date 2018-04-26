@@ -43,7 +43,7 @@ def add_review(request):
         #return HttpResponseRedirect(reverse('reviews:bike_detail', args=(bike.id,)))
         return render (request, 'reviews/reviews/created.html',{'review':review})
     else:
-        return render(request, 'reviews/bike_detail.html', {'review': review, 'form': form})
+        return render(request, 'reviews/reviews/create.html')
 
 
 
