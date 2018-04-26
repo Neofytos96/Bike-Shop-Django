@@ -8,7 +8,7 @@ class OrderCreateForm(forms.ModelForm):
 
 	class Meta:
 		model = Order
-		fields = ('card_number',)
+		fields = ('cardholder_name', 'card_number', 'CVV_code')
 
 
 # Validate card_number field.  Usage def clean_<FIELD NAME >, i.e. attributes from 
@@ -39,3 +39,18 @@ class OrderCreateForm(forms.ModelForm):
 			raise ValidationError('CVV code must contain 3 digits')
 		
 		return CVV_code
+
+	def clean_cardholder_name(self):
+		cardholder_name = self.cleaned_data['cardholder_name']
+		
+		#check the user input is only numbers
+		if not cardholder_name.isalpha():
+			raise forms.ValidationError("Card holder name can contain only letters")
+		
+		return cardholder_name
+
+
+
+
+
+		
