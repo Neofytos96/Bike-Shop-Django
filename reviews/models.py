@@ -17,12 +17,12 @@ class Review(models.Model):
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
+    approved_comment = models.BooleanField(default=False)
 
-    class Meta:
-        ordering = ('-created',)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
 
     def __str__(self):
-        return 'Review {}'.format(self.id)
-
-    def get_review(self):
-        return self.items.all()
+        return self.comment
