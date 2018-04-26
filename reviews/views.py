@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from .models import Review, Bike
+from .models import Review
+from bikes.models import Bike
 from .forms import ReviewForm
 import datetime
 
@@ -16,26 +17,6 @@ def review_detail(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     return render(request, 'reviews/review_detail.html', {'review': review})
 
-
-def bike_list(request, brand_slug=None):
-    brand = None
-    brands = Brand.objects.all()
-    bikes = Bike.objects.filter(available=True)
-    if brand_slug:
-        brand = get_object_or_404(Brand, slug=brand_slug)
-        bikes = bikes.filter(brand=brand)
-    return render(request, 'bikes/bike/list.html', {'brand': brand,
-                                                      'brands': brands,
-                                                      'bikes': bikes})
-
-
-def bike_detail(request, id, slug):
-    bike = get_object_or_404(Bike, id=id, slug=slug, available=True)
-    cart_bike_form = CartAddProductForm()
-    return render(request,
-                  'bikes/bike/detail.html',
-                   {'bike': bike,
-                    'cart_bike_form': cart_bike_form})
 
 
 def add_review(request, bike_id):
