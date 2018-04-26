@@ -9,18 +9,16 @@ class ReviewCreateForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('user_name', 'comment', 'pub_date')
-        widgets = {
-            'comment': Textarea(attrs={'cols': 40, 'rows': 15})
-        }
+        
 
     def clean_user_name(self):
-		cardholder_name = self.cleaned_data['cardholder_name']
+		user_name = self.cleaned_data['user_name']
 		
 		#check the user input is only numbers
-		if not cardholder_name.replace(" ", "").isalpha():
+		if not user_name.replace(" ", "").isalpha():
 			raise forms.ValidationError("Card holder name can contain only letters")
 		
-		return cardholder_name
+		return user_name
 
     
 
