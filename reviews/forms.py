@@ -5,10 +5,10 @@ from .models import Review
 from django.forms import ModelForm, Textarea
 
 
-class ReviewCreateForm(ModelForm):
+class ReviewCreateForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['user_name', 'comment', 'pub_date']
+        fields = ('user_name', 'comment', 'pub_date')
         widgets = {
             'comment': Textarea(attrs={'cols': 40, 'rows': 15})
         }
