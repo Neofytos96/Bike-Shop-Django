@@ -16,10 +16,7 @@
         	{% csrf_token %}
         	<input type="submit" value="Add to cart">
         </form>
-        <div>
-            <a href="{% url "review:review_create" %}" class="button">Review this bike!</a>
-
-        </div>
+        
         
         {{ bike.description|linebreaks }}
     </div>

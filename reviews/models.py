@@ -1,35 +1,33 @@
 from django.db import models
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.models import User
 from bikes.models import Bike
 
 
+
+class Bike(models.Model):
+    name = models.CharField(max_length=200)
+    
+    
+        
+    def __unicode__(self):
+        return self.name
+
+
+    bike = models.ForeignKey(Bike)
+    pub_date = models.DateTimeField('date published')
+    user_name = models.CharField(max_length=100)
+    comment = models.CharField(max_length=200)
+
+
 class Review(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
-    pub_date = models.DateTimeField(auto_now_add=True)
-    bike = models.ForeignKey(Bike, on_delete=models.CASCADE, related_name='bike')
-    review = models.CharField(max_length = 500, db_index=True)
-
-    class Meta:
-        reviewing = ('-created',)
-
-    def __str__(self):
-        return 'Review {}'.format(self.id)
-
-    def get_review(self):
-        return self.review
-
-
-class ReviewItem(models.Model):
-    review = models.ForeignKey(Review, related_name='items')
-    bike = models.ForeignKey(Bike, related_name='review_items')
-    pub_date = models.DateTimeField(auto_now_add=True)
-    review = models.CharField(max_length = 500, db_index=True)
-
-
-
-    def __str__(self):
-        return '{}'.format(self.id)
-
-    def get_cost(self):
-        return self.review
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
+    bike = models.ForeignKey(Bike)
+    pub_date = models.DateTimeField('date published')
+    user_name = models.CharField(max_length=100)
+    comment = models.CharField(max_length=200)
+    rating = models.IntegerField(choices=RATING_CHOICES)
