@@ -11,7 +11,7 @@ class Review(models.Model):
     review = models.CharField(max_length = 500, db_index=True)
 
     class Meta:
-        ordering = ('-created',)
+        reviewing = ('-created',)
 
     def __str__(self):
         return 'Review {}'.format(self.id)
