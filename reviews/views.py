@@ -19,10 +19,10 @@ def review_detail(request, review_id):
 
 
 
-def add_review(request):
+def add_review(request, bike_id):
 
     bike = get_object_or_404(Bike, id=bike_id)
-    form = ReviewForm(request.POST)
+    form = ReviewCreateForm(request.POST)
     if form.is_valid():
         comment = form.cleaned_data['comment']
         user_name = form.cleaned_data['user_name']
