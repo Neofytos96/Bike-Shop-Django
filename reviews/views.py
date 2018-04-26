@@ -40,7 +40,10 @@ def add_review(request):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('reviews:bike_detail', args=(bike.id,)))
+        #return HttpResponseRedirect(reverse('reviews:bike_detail', args=(bike.id,)))
+        return render (request, 'reviews/reviews/created.html',{'review':review})
+    else:
+        return render(request, 'reviews/bike_detail.html', {'review': review, 'form': form})
 
-    return render(request, 'reviews/bike_detail.html', {'bike': bike, 'form': form})
+
 
