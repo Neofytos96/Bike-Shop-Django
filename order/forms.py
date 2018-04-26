@@ -44,7 +44,7 @@ class OrderCreateForm(forms.ModelForm):
 		cardholder_name = self.cleaned_data['cardholder_name']
 		
 		#check the user input is only numbers
-		if not cardholder_name.isalpha():
+		if  cardholder_name.isdigit():
 			raise forms.ValidationError("Card holder name can contain only letters")
 		
 		return cardholder_name
@@ -53,4 +53,3 @@ class OrderCreateForm(forms.ModelForm):
 
 
 
-		
