@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from .models import Review
 
 
-class ReviewCreateForm(ModelForm):
+class ReviewCreateForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ['user_name', 'comment', 'pub_date']
