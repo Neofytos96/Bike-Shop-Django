@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^order/', include('order.urls', namespace='order')),
-    url(r'^reviews/', include('reviews.urls', namespace="reviews")),
+    #url(r'^reviews/', include('reviews.urls', namespace="reviews")),
     url(r'^', include('bikes.urls', namespace='bikes')),
     url(r'^account/', include('account.urls', namespace='account')), 
 
