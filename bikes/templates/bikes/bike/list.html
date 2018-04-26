@@ -27,7 +27,7 @@
         {% for bike in bikes %}
             <div class="item">
             <a href="{{ bike.get_absolute_url }}">
-                    <img src="{% if bike.image %}{{ bike.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                    <img src="{% if bike.image %}{{ bike.image.url }}{% else %}{% static "bikes/img/no_image.png" %}{% endif %}">
                 </a><br>
                 <a href="{{ bike.get_absolute_url }}">{{ bike }}</a><br>
                 ${{ bike.price }}
