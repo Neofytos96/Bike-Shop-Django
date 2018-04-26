@@ -20,7 +20,7 @@ def review_detail(request, review_id):
 
 
 def add_review(request, bike_id):
-
+    review = Review(request)
     bike = get_object_or_404(Bike, id=bike_id)
     form = ReviewCreateForm(request.POST)
     if form.is_valid():
