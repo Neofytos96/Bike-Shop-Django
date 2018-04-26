@@ -1,5 +1,5 @@
-from podilatostore.search.models import SearchTerm
-from podilatostore.catalog.models import Product
+from ecomstore.search.models import SearchTerm
+from ecomstore.catalog.models import Product
 from django.db.models import Q
 STRIP_WORDS = ['a','an','and','by','for','from','in','no','not',
  'of','on','or','that','the','to','with']
