@@ -1,10 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
 body { 
-    margin:0 0 0;
+    margin:0;
     padding:0;
     font-family:helvetica, sans-serif; 
-    background-color: #fff7fe;
 }
 
 h1, h2, h3, h4, h5 , h6 { 
@@ -13,8 +12,7 @@ h1, h2, h3, h4, h5 , h6 {
 
 a {
     text-decoration:none;
-    /*color:#5993bb;*/
-    color:#104e77;
+    color:#5993bb;
 }
 
 a:hover {
@@ -24,8 +22,6 @@ a:hover {
 a.button, input[type="submit"] {
     color:#fff;
     background:#5993bb;
-    width: 110px;
-    height: 40px;
     border-radius:4px;
     padding:10px 20px;
     font-size:14px;
@@ -43,19 +39,6 @@ a.button.light {
 
 .text-right {
     text-align:right;
-}
-
-footer {
-    text-align: center;
-    background-color: #f759e2;
-    vertical-align: middle;
-    /* position: absolute;*/
-    /*left: 0;*/
-    /*bottom: 0;*/
-    height: 40px;
-    /*width: 100%;*/
-    /*padding:20px 20px;*/
-    /*margin: auto;*/
 }
 
 table {
@@ -159,12 +142,6 @@ ul.errorlist {
     padding-top:4px;
 }
 
-#subheader .top-nav-bar {
-    float:right;
-    padding-top:4px;
-    padding-right:12px;
-}
-
 #content {
     padding:0 100px;
     overflow:hidden;
@@ -208,15 +185,15 @@ ul.errorlist {
 }
 
 .bike-list .item {
-    width:60%;
+    width:25%;
     padding:10px 20px 10px 0;
     float:left;
-    /*text-align:center;*/
+    text-align:center;
     line-height:1.2;
 }
 
 .bike-list .item img {
-    width:300px;
+    width:200px;
     margin-bottom:8px;
 }
 
@@ -236,11 +213,11 @@ ul.errorlist {
     padding:0 20px 20px 0;
 }
 
-.bike-detail h1 {
+.product-detail h1 {
     margin-bottom:0;
 }
 
-.bike-detail h2 {
+.product-detail h2 {
     margin-top:10px;
 }
 
@@ -274,13 +251,6 @@ ul.errorlist {
 
 .order-info span {
     float:right;
-}
-
-.checkout
-{
-    float:left;
-    height:500px;
-
 }
 
 .neg {
