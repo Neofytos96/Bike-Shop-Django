@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'bikes',
     'cart',
     'order',
-    'reviews', 
+    #'reviews', 
    # 'search',
 ]
 
