@@ -2,23 +2,29 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from .models import Review
+from django.shortcuts import render_to_response, get_object_or_404, render
+from django.conf import settings
+from django.http import HttpResponse
 from bikes.models import Bike
 from .forms import ReviewCreateForm
 import datetime
 from cart.cart import Cart
+from django.contrib.auth.models import User
+from .models import Review
 
 
 
 
-def review_list(request):
-    latest_review_list = Review.objects.order_by('-pub_date')[:9]
-    context = {'latest_review_list':latest_review_list}
-    return render(request, 'reviews/review_list.html', context)
+
+#def review_list(request):
+#    latest_review_list = Review.objects.order_by('-pub_date')[:9]
+#    context = {'latest_review_list':latest_review_list}
+#    return render(request, 'reviews/review_list.html', context)
 
 
-def review_detail(request, review_id):
-    review = get_object_or_404(Review, pk=review_id)
-    return render(request, 'reviews/review_detail.html', {'review': review})
+#def review_detail(request, review_id):
+#    review = get_object_or_404(Review, pk=review_id)
+#    return render(request, 'reviews/review_detail.html', {'review': review})
 
 
 
