@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from .models import Review
 from bikes.models import Bike
 from .forms import ReviewCreateForm
+import datetime
 
 
 
@@ -28,13 +29,15 @@ def add_review(request):
 
     #bike = get_object_or_404(Bike, id=bike_id)
     if request.user.is_authenticated():
-        user_id = request.user.id
-        current_user_object = User.objects.get(id=user_id)
+        #user_id = request.user.id
+        #current_user_object = User.objects.get(id=user_id)
         form = ReviewCreateForm(request.POST)
         if form.is_valid():
+            user = form.cleaned_data['user']
             comment = form.cleaned_data['comment']
             rating = form.cleaned_data['rating']
-            review.user = current_user_object
+            review.pub_date = datetime.datetime.now()
+            #review.user = current_user_object
             review = Review()
             review.save()
             

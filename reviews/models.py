@@ -15,7 +15,7 @@ class Review(models.Model):
     )
     bike = models.ForeignKey(Bike)
     pub_date = models.DateTimeField('date published')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
+    user = models.CharField(max_length=40)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
 
