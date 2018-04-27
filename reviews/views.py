@@ -24,7 +24,7 @@ import datetime
 
 
 
-def add_review(request):
+def review_create(request):
     #cart = Cart(request)
 
     #bike = get_object_or_404(Bike, id=bike_id)
