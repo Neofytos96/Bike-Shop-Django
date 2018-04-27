@@ -115,6 +115,12 @@ ul.errorlist {
    padding:0;
 }
 
+#welcome_header{
+    float: right;
+    text-align: right;
+    margin: 10px, 20px,10px,0px;
+}
+
 
 #header {
     padding:10px 100px;
@@ -124,16 +130,26 @@ ul.errorlist {
 
 #subheader {
     background:#ececec;
+    background: linear-gradient(-90deg, #5993bb, white);
     color:#444;
     padding:15px 100px;
     overflow:auto;
 }
 
+#logButtons{
+    color: #5993bb;
+    float: left;
+}
+#logButtons a{
+    font-family: 'Ubuntu' , sans-serif;
+
+}
+
 #header .logo {
     font-family: 'Ubuntu', sans-serif;
     float:left;
-    color:#333;
-    font-size:22px;
+    color:#5993bb;
+    font-size:34px;
     margin-right:10%;
 }
 
