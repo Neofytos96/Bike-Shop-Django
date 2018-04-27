@@ -24,8 +24,9 @@ def review_detail(request, review_id):
 
 def add_review(request):
     cart = Cart(request)
+
     #bike = get_object_or_404(Bike, id=bike_id)
-    user_id = request.user.id
+    user = request.user.id
     #current_user_object = User.objects.get(id=user_id)
     form = ReviewCreateForm(request.POST)
     if form.is_valid():
