@@ -8,7 +8,7 @@ import datetime
 class ReviewCreateForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ('user_name', 'comment', 'pub_date', 'rating')
+        fields = ('user_name', 'comment', 'rating')
     
 
     def clean_user_name(self):
@@ -20,9 +20,7 @@ class ReviewCreateForm(forms.ModelForm):
     	comment = self.cleaned_data['comment']
     	return comment
 
-    def clean_pub_date(self):
-        pub_date = self.cleaned_data['pub_date']
-        return pub_date
+    
 
     def clean_rating(self):
         rating = self.cleaned_data['rating']

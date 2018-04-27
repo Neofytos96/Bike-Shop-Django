@@ -33,9 +33,9 @@ def add_review(request):
         comment = form.cleaned_data['comment']
         user_name = form.cleaned_data['user_name']
         review = Review()
-        review.bike = bike
-        review.user_name = user_name
-        review.comment = comment
+        #review.bike = bike
+        #review.user_name = user_name
+        #review.comment = comment
         review.pub_date = datetime.datetime.now()
         review.save()
         # Always return an HttpResponseRedirect after successfully dealing
