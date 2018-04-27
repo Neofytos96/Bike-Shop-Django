@@ -160,7 +160,14 @@ ul.errorlist {
 #subheader .cart {
     float:right;
     padding-top:4px;
+    color: #333;
 }
+
+#subheader .cart a{
+    color: white;
+}
+
+
 
 #content {
     padding:0 100px;

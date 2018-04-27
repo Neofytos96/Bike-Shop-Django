@@ -9,7 +9,7 @@
 <body>
 <div id="welcome_header">
         {% if user.is_authenticated %}
-                <p>Welcome {{ user.username }}!</p>  <br>
+                <p>Welcome {{ user.username }}!</p> 
          
         {% else %}
         <p> Welcome Guest! </p>  
@@ -35,17 +35,18 @@
                 {% endif %}
             {% endwith %}
         </div>
+
+
+        <div id='logButtons'>
+            {% if user.is_authenticated %}
+            <a href="{% url "account:logout" %}">Logout</a>
+            {% else %}
+            <a href="{% url "account:signup" %}">Not a member? Register!</a>&nbsp;
+            <a href="{% url "account:login" %}">Login</a>
+
+            {% endif %}
+        </div>
     </div>
-
-    <div id='logButtons'>
-    {% if user.is_authenticated %}
-    <a href="{% url "account:logout" %}">Logout</a>
-    {% else %}
-    <a href="{% url "account:signup" %}">Not a member? Register!</a>&nbsp;
-    <a href="{% url "account:login" %}">Login</a>
-
-    {% endif %}
-</div>
 
 
     <div id="content">
