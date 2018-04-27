@@ -36,6 +36,7 @@ def add_review(request):
         #review.bike = bike
         #review.user_name = user_name
         #review.comment = comment
+        bike = get_object_or_404(Bike, id=bike_id)
         review.pub_date = datetime.datetime.now()
         review.save()
         # Always return an HttpResponseRedirect after successfully dealing
