@@ -36,9 +36,14 @@ def add_review(request):
         #review.bike = bike
         #review.user_name = user_name
         #review.comment = comment
-        bike = get_object_or_404(Bike, id=bike_id)
-        review.pub_date = datetime.datetime.now()
+#        bike = get_object_or_404(Bike, id=bike_id)
+ #       review.pub_date = datetime.datetime.now()
         review.save()
+        for item in cart:
+            ReviewItem.objects.create(review=review,
+                                      bike=item['bike'],
+                                      rating=item['rating'],
+                                      comment=item['comment'])
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
