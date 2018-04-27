@@ -30,7 +30,7 @@ def review_create(request):
     #bike = get_object_or_404(Bike, id=bike_id)
     if request.user.is_authenticated():
         #user_id = request.user.id
-        #current_user_object = User.objects.get(id=user_id)
+        current_user_object = User.objects.get(id=user_id)
         form = ReviewCreateForm(request.POST)
         if form.is_valid():
             user_name = form.cleaned_data['user_name']
