@@ -12,16 +12,18 @@
                 <p>Welcome {{ user.username }}!</p>  <br>
          
         {% else %}
-        <p> Welcome Guest! </p>
-        
-        
+        <p> Welcome Guest! </p>  
 {% endif %}
+
     </div>
+    
     <div id="header">
         <a href="/" class="logo">Podilato</a>
     </div>
     
     <div id="subheader">
+    
+<div id='logButtons'>
     {% if user.is_authenticated %}
     <a href="{% url "account:logout" %}">Logout</a>
     {% else %}
@@ -29,14 +31,14 @@
     <a href="{% url "account:login" %}">Login</a>
 
     {% endif %}
+</div>
+
+    
 
 
         
         <div class="cart">
-            
-            {% with total_items=cart|length %}
-                
-               
+            {% with total_items=cart|length %} 
                 {% if cart|length > 0 %}
                     Your cart: 
                     <a href="{% url "cart:cart_detail" %}">
@@ -48,6 +50,8 @@
             {% endwith %}
         </div>
     </div>
+
+
     <div id="content">
         {% block content %}
         {% endblock %}
