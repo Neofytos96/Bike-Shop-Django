@@ -1,6 +1,6 @@
 from django.contrib import admin
 from bikes.models import Bike
-from .models import Review, ReviewItem
+from .models import Review
 
 class ReviewAdmin(admin.ModelAdmin):
     model = Review
