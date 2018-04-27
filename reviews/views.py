@@ -36,7 +36,7 @@ def add_review(request):
             user = form.cleaned_data['user']
             comment = form.cleaned_data['comment']
             rating = form.cleaned_data['rating']
-            review.pub_date = datetime.datetime.now()
+            pub_date = datetime.datetime.now()
             #review.user = current_user_object
             review = Review()
             review.save()
