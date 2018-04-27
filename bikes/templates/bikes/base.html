@@ -16,12 +16,13 @@
          <a href="{% url "account:logout" %}">Logout</a>
         {% else %}
         <p> Welcome Guest! </p>
-    	<a href="{% url "account:signup" %}">Not a member? Register!</a><br>
-    	<a href="{% url "account:login" %}">Login</a><br>
+    	
         
 {% endif %}
     </div>
     <div id="subheader">
+    <a href="{% url "account:signup" %}">Not a member? Register!</a><br>
+        <a href="{% url "account:login" %}">Login</a><br>
         <div class="cart">
             
             {% with total_items=cart|length %}
