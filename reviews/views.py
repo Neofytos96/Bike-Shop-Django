@@ -31,7 +31,7 @@ def add_review(request):
     if form.is_valid():
         comment = form.cleaned_data['comment']
         #user_name = form.cleaned_data['user_name']
-        rating = form.cleanned_date['rating']
+        rating = form.cleaned_data['rating']
         review = Review()
         #review.bike = bike
         #review.user_name = user_name
