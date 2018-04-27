@@ -41,11 +41,11 @@ def add_review(request):
             review = Review()
             review.save()
             ReviewItem.objects.create(review=review,
-                                         bike=item['bike'],
-                                         comment=item['comment'],
-                                         pub_date=item['quantity']
-                                         user_name=item['user_name']
-                                         rating=item['rating'])
+                                         bike='bike',
+                                         comment='comment',
+                                         pub_date='quantity'
+                                         user_name='user_name'
+                                         rating='rating')
             
             return render (request, 'reviews/reviews/created.html',{'review':review})
         else:

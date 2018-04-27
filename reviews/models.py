@@ -30,6 +30,13 @@ class Review(models.Model):
 
 
 class ReviewItem(models.Model):
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
     review = models.ForeignKey(Review, related_name='items')
     bike = models.ForeignKey(Bike, related_name='review_items')
     user_name = models.CharField(max_length=40)
