@@ -1,0 +1,17 @@
+{% extends "bikes/base.html" %}
+
+{% block title %}
+Review
+{% endblock %}
+
+{% block content %}
+
+<h1>Review</h1>
+
+
+<div style="float:left;">
+	<h3>Please <a href="{% url "account:login" %}">log in </a> or <a href="{% url "account:signup" %}">register </a> to complete your review.</h3>    
+
+</div>
+
+{% endblock %}

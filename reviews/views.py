@@ -41,6 +41,8 @@ def add_review(request):
             review = Review()
             review.save()
             
-        return render (request, 'reviews/reviews/created.html',{'review':review})
+            return render (request, 'reviews/reviews/created.html',{'review':review})
+        else:
+            return render(request, 'reviews/reviews/create.html',{'form': form})
     else:
-        return render(request, 'reviews/reviews/create_review.html',{'form': form})
+        return render(request, 'reviews/reviews/create-login.html')
