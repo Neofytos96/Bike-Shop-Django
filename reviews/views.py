@@ -38,6 +38,7 @@ def add_review(request):
         #review.comment = comment
 #        bike = get_object_or_404(Bike, id=bike_id)
  #       review.pub_date = datetime.datetime.now()
+        review.user = current_user_object
         review.save()
         for item in cart:
             ReviewItem.objects.create(review=review,
