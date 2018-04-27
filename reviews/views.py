@@ -33,6 +33,7 @@ def review_create(request):
         current_user_object = User.objects.get(id=user_id)
         form = ReviewCreateForm(request.POST)
         if form.is_valid():
+            review = form.save(commit=False)
             review.user = current_user_object
             user_name = form.cleaned_data['user_name']
             comment = form.cleaned_data['comment']
