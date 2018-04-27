@@ -22,10 +22,6 @@ class ReviewCreateForm(forms.ModelForm):
 
     def clean_pub_date(self):
         pub_date = self.cleaned_data['pub_date']
-
-        if not datetime.datetime.strptime(pub_date, '%d/%m/%Y'):
-            raise forms.ValidationError("Date should be in the format DD/MM/YYYY")
-        
         return pub_date
 
     def clean_rating(self):
