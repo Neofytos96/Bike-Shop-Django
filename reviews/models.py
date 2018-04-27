@@ -15,3 +15,12 @@ class Review(models.Model):
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
+
+    class Meta:
+        ordering = ('-pub_date',)
+
+    def __str__(self):
+        return 'Review {}'.format(self.id)
+
+    def get_review(self):
+        return 'Review {}'.format(self.id)
