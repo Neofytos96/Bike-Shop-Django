@@ -54,7 +54,7 @@ class OrderCreateForm(forms.ModelForm):
 	def clean_expiry_date(self):
 		expiry_date = self.cleaned_data['expiry_date']
 
-		if not datetime.datetime.strptime(expiry_date, '%m-%Y'):
+		if not datetime.datetime.strptime(expiry_date, '%m/%Y'):
 			raise forms.ValidationError("Date should be in the format MM/YYYY")
 		
 		return expiry_date
