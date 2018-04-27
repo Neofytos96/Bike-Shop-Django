@@ -7,7 +7,7 @@ from .models import Review
 class ReviewCreateForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ('user_name', 'comment', 'pub_date')
+        fields = ('user_name', 'comment', 'pub_date', 'rating')
     
 
     def clean_user_name(self):
@@ -20,7 +20,13 @@ class ReviewCreateForm(forms.ModelForm):
     	return comment
 
     def clean_pub_date():
+        pub_date = self.cleaned_data['pub_date']
 
-    	pub_date = self.cleaned_data['pub_date']
+        if not datetime.datetime.strptime(pub_date, '%d/%m/%Y'):
+            raise forms.ValidationError("Date should be in the format DD/MM/YYYY")
+        
+        return pub_date
 
-    	return pub_date
+    def clean_rating(self):
+        rating = self.cleaned_data['rating']
+        return rating
