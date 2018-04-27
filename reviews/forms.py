@@ -19,7 +19,7 @@ class ReviewCreateForm(forms.ModelForm):
     	comment = self.cleaned_data['comment']
     	return comment
 
-    def clean_pub_date():
+    def clean_pub_date(self):
         pub_date = self.cleaned_data['pub_date']
 
         if not datetime.datetime.strptime(pub_date, '%d/%m/%Y'):
