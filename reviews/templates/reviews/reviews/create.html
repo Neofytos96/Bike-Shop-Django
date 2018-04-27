@@ -1,0 +1,42 @@
+{% extends "bikes/base.html" %}
+
+{% block title %}
+Review 
+{% endblock %}
+
+{% block content %}
+<h1>Review this item dear</h1>
+
+
+<div class="review"> 
+
+    <h3>Your are reviewing as:</h3>
+
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+
+        <form action="." method="post">
+            {% for field in form %}
+            <table>
+                <tr>
+                    <td>{{ field.label_tag }}</td>
+                </tr>
+                <tr>
+                 <td> {{ field }}</td>
+                 <td> {{ field.errors }}</td>
+             </tr>
+             <tr>
+                
+                
+             </tr>
+         </table>
+         {% endfor %}
+
+         <p><input type="submit" value="Submit your review"></p>
+         {% csrf_token %}
+     </form>
+     
+ </p>
+</div>
+
+
+{% endblock %}
