@@ -11,7 +11,6 @@ class ReviewCreateForm(forms.ModelForm):
         fields = ('comment', 'rating')
     
 
-
     def clen_comment(self):
     	comment = self.cleaned_data['comment']
     	return comment

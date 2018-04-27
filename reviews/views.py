@@ -6,7 +6,6 @@ from bikes.models import Bike
 from .forms import ReviewCreateForm
 import datetime
 from cart.cart import Cart
-from django.contrib.auth.models import User
 
 
 
@@ -31,14 +30,15 @@ def add_review(request):
     form = ReviewCreateForm(request.POST)
     if form.is_valid():
         comment = form.cleaned_data['comment']
-        user_name = form.cleaned_data['user_name']
+        #user_name = form.cleaned_data['user_name']
+        rating = form.cleanned_date['rating']
         review = Review()
         #review.bike = bike
         #review.user_name = user_name
         #review.comment = comment
 #        bike = get_object_or_404(Bike, id=bike_id)
  #       review.pub_date = datetime.datetime.now()
-        review.user = current_user_object
+        #review.user = current_user_object
         review.save()
         for item in cart:
             ReviewItem.objects.create(review=review,
