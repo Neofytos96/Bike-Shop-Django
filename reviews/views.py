@@ -33,13 +33,19 @@ def add_review(request):
         #current_user_object = User.objects.get(id=user_id)
         form = ReviewCreateForm(request.POST)
         if form.is_valid():
-            user = form.cleaned_data['user']
+            user_name = form.cleaned_data['user_name']
             comment = form.cleaned_data['comment']
             rating = form.cleaned_data['rating']
             pub_date = datetime.datetime.now()
             #review.user = current_user_object
             review = Review()
             review.save()
+            ReviewItem.objects.create(review=review,
+                                         bike=item['bike'],
+                                         comment=item['comment'],
+                                         pub_date=item['quantity']
+                                         user_name=item['user_name']
+                                         rating=item['rating'])
             
             return render (request, 'reviews/reviews/created.html',{'review':review})
         else:

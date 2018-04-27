@@ -15,7 +15,7 @@ class Review(models.Model):
     )
     bike = models.ForeignKey(Bike)
     pub_date = models.DateTimeField('date published')
-    user = models.CharField(max_length=40)
+    user_name = models.CharField(max_length=40)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
 
@@ -27,3 +27,19 @@ class Review(models.Model):
 
     def get_review(self):
         return 'Review {}'.format(self.id)
+
+
+class ReviewItem(models.Model):
+    review = models.ForeignKey(Review, related_name='items')
+    bike = models.ForeignKey(Bike, related_name='review_items')
+    user_name = models.CharField(max_length=40)
+    comment = models.CharField(max_length=200)
+    rating = models.IntegerField(choices=RATING_CHOICES)
+    pub_date = models.DateTimeField('date published')
+
+
+    def __str__(self):
+        return '{}'.format(self.id)
+
+    def get_the_review(self):
+        return '{}'.format(self.id)
