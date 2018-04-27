@@ -3,12 +3,14 @@ from django.core.exceptions import ValidationError
 
 from django.contrib.auth.models import User
 from .models import Order
+import re
+import datetime
 
 class OrderCreateForm(forms.ModelForm):
 
 	class Meta:
 		model = Order
-		fields = ('cardholder_name', 'card_number', 'CVV_code')
+		fields = ('cardholder_name', 'card_number','expiry_date', 'CVV_code')
 
 
 # Validate card_number field.  Usage def clean_<FIELD NAME >, i.e. attributes from 
@@ -48,6 +50,15 @@ class OrderCreateForm(forms.ModelForm):
 			raise forms.ValidationError("Card holder name can contain only letters")
 		
 		return cardholder_name
+
+	def clean_expiry_date(self):
+		expiry_date = self.cleaned_data['expiry_date']
+
+		if not datetime.datetime.strptime(expiry_date, '%m-%Y'):
+			raise forms.ValidationError("Date should be in the format MM/YYYY")
+		
+		return expiry_date
+
 
 
 
