@@ -155,6 +155,12 @@ ul.errorlist {
     color:#5993bb;
     font-size:34px;
     margin-right:10%;
+
+}
+
+#header img {
+    height: 30px;
+    width: 30px;
 }
 
 #subheader .cart {
