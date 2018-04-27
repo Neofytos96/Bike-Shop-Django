@@ -1,5 +1,8 @@
 from django.db import models
 from bikes.models import Bike
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate
+
 
 
 class Review(models.Model):
