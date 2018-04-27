@@ -42,10 +42,10 @@
 
         <div id='logButtons'>
             {% if user.is_authenticated %}
-            <a href="{% url "account:logout" %}">Logout</a>|
+            <a href="{% url "account:logout" %}">Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;
             {% else %}
-            <a href="{% url "account:signup" %}">Not a member? Register!</a>&nbsp;
-            <a href="{% url "account:login" %}">Login</a>
+            <a href="{% url "account:signup" %}">Not a member? Register!</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="{% url "account:login" %}">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 
             {% endif %}
             <a href="/" class="logo">Home</a>
