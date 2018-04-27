@@ -8,5 +8,5 @@ class ReviewAdmin(admin.ModelAdmin):
     list_filter = ['pub_date', 'user_name']
     search_fields = ['comment']
     
-#admin.site.register(Bike)
+admin.site.register(Bike)
 admin.site.register(Review, ReviewAdmin)
