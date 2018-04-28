@@ -39,7 +39,7 @@ def review_create(request):
             comment = form.cleaned_data['comment']
             rating = form.cleaned_data['rating']
             bike = form.cleaned_data['bike']
-            bike_id=bike
+            #bike_id=bike
             pub_date = datetime.datetime.now()
             #review.user = current_user_object
             review = Review()
