@@ -36,6 +36,7 @@ def review_create(request):
             review = form.save(commit=False)
             bike = form.save(commit=False)
             review.user = current_user_object
+            bike.user = current_user_object
             user_name = form.cleaned_data['user_name']
             comment = form.cleaned_data['comment']
             rating = form.cleaned_data['rating']
