@@ -40,8 +40,8 @@ def review_create(request):
             user_name = form.cleaned_data['user_name']
             comment = form.cleaned_data['comment']
             rating = form.cleaned_data['rating']
-            #bike = form.cleaned_data['bike']
-            bike = get_object_or_404(Bike, id=bike_id)
+            bike = form.cleaned_data['bike']
+            #bike = get_object_or_404(Bike, id=bike_id)
             #bike_id=bike
             pub_date = datetime.datetime.now()
             #review.user = current_user_object
