@@ -47,7 +47,7 @@ def review_create(request):
             review = Review()
             review.save()
             ReviewItem.objects.create(review=review,
-                                         bike='bike',
+                                         bike=bike,
                                          comment='comment',
                                          pub_date='quantity',
                                          user_name='user_name',
