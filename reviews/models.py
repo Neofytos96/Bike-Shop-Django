@@ -18,6 +18,7 @@ class Review(models.Model):
     user_name = models.CharField(max_length=40)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
+    bike_id = models.CharField(null=True)
 
     class Meta:
         ordering = ('-pub_date',)
@@ -43,6 +44,7 @@ class ReviewItem(models.Model):
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
     pub_date = models.DateTimeField('date published')
+    bike_id = models.CharField(null=True)
 
 
     def __str__(self):
