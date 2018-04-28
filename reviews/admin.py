@@ -4,7 +4,7 @@ from .models import Review
 
 class ReviewAdmin(admin.ModelAdmin):
     model = Review
-    list_display = ('bike', 'user_name', 'comment', 'pub_date', 'rating')
+    list_display = ('bike_id', 'user_name', 'comment', 'pub_date', 'rating')
     list_filter = ['pub_date', 'user_name']
     search_fields = ['comment']
     
