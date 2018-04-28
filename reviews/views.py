@@ -24,9 +24,9 @@ import datetime
 
 
 
-def review_create(request, bike_id):
+def review_create(request):
     #cart = Cart(request)
-
+    bike = Bike(request)
     #bike = get_object_or_404(Bike, id=bike_id)
     if request.user.is_authenticated():
         user_id = request.user.id
