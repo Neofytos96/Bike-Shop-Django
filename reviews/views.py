@@ -34,18 +34,19 @@ def review_create(request):
         form = ReviewCreateForm(request.POST)
         if form.is_valid():
             review = form.save(commit=False)
+            bike = form.save(commit=False)
             review.user = current_user_object
             user_name = form.cleaned_data['user_name']
             comment = form.cleaned_data['comment']
             rating = form.cleaned_data['rating']
-            bike_id = form.cleaned_data['bike']
+            #bike = form.cleaned_data['bike']
             #bike_id=bike
             pub_date = datetime.datetime.now()
             #review.user = current_user_object
             review = Review()
             review.save()
             ReviewItem.objects.create(review=review,
-                                         bike_id='bike_id',
+                                         bike='bike',
                                          comment='comment',
                                          pub_date='quantity',
                                          user_name='user_name',
