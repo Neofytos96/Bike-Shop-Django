@@ -11,6 +11,10 @@
         <h1>{{ bike.name }}</h1>
         <h2><a href="{{ bike.brand.get_absolute_url }}">{{ bike.brand }}</a></h2>
         <p class="price">${{ bike.price }}</p>
+        <p class="price">{if bike|stock = 0}These model is not available at the moment 
+        {% else %}
+        Available in stock:{{bike.stock}}
+        {% endif %}</p>
         <form action="{% url "cart:cart_add" bike.id %}" method="post">
         	{{cart_bike_form}}
         	{% csrf_token %}
