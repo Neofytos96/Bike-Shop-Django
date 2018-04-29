@@ -36,7 +36,7 @@ def sort(request):
     return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
   elif select_type =="alphabetically":
     if select_criteria=="Descending":
-      bikes= Bike.objects.order_by("title")
+      bikes= Bike.objects.order_by("-title")
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
     else:
       bikes= Bike.objects.order_by("-title")
@@ -44,15 +44,15 @@ def sort(request):
 
   elif select_type == "price" :
     if select_criteria=="Ascending":
-      bikes= Bike.objects.order_by("price")
+      bikes= Bike.objects.order_by("-price")
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
     else:
       bikes= Bike.objects.order_by("-price")
-      return render(request, 'bikes/bikes/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
+      return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
 
   elif select_type == "brand" :
     if select_criteria=="Ascending":
-      bikes= Bike.objects.order_by("brand")
+      bikes= Bike.objects.order_by("-brand")
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
     else:
       bikes= Bike.objects.order_by("-brand")
