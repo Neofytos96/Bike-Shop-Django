@@ -47,12 +47,12 @@ def review_create(request):
             #review.user = current_user_object
             review = Review()
             #review.save()
-            ReviewItem.objects.create(review=review,
-                                         bike='bike',
-                                         comment='comment',
-                                         pub_date='quantity',
-                                         user_name='user_name',
-                                         rating='rating')
+#            ReviewItem.objects.create(review=review,
+#                                         bike='bike',
+#                                         comment='comment',
+#                                         pub_date='quantity',
+#                                         user_name='user_name',
+#                                         rating='rating')
             
             return render (request, 'reviews/reviews/created.html',{'review':review})
         else:
