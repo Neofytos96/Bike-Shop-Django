@@ -62,14 +62,59 @@ def sort(request):
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
 
 
-def search(request):
-  template = 'bikes/bike/list.html'
-  query = request.GET.get('q')
-  results = Bike.objects.filter(Q(title__icontains=query) | Q(brand__icontains=query))
-  pages = pagination(request, results, num=1)
-  context = {'items':pages[0], 'page_range':pages[1],}
-  return render(request, template, context)
+"""def post_list(request):
+    template = 'bikes/bike/list.html'
+    object_list = Post.objects.filter(status='Published')
 
+    pages = pagination(request, object_list, num=1)
+
+    context = {
+        'items': pages[0],
+        'page_range': pages[1],
+    }
+    return render(request, template, context)
+
+
+def post_detail(request, slug):
+    template = 'blog/post_detail.html'
+
+    post = get_object_or_404(Post, slug=slug)
+    context = {
+        'post': post,
+    }
+    return render(request, template, context)
+
+
+def category_detail(request, slug):
+    template = 'blog/category_detail.html'
+
+    category = get_object_or_404(Category, slug=slug)
+    post = Post.objects.filter(category=category)
+
+    context = {
+        'category': category,
+        'post': post,
+    }
+    return render(request, template, context)"""
+
+def search(request):
+    template = 'bikes/bike/list.html'
+
+    query = request.GET.get('q')
+
+    if query:
+        results = Post.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
+    else:
+        results = Post.objects.filter(status="Published")
+
+    pages = pagination(request, results, num=1)
+
+    context = {
+        'items': pages[0],
+        'page_range': pages[1],
+        'query': query,
+    }
+    return render(request, template, context)
 
 
 
