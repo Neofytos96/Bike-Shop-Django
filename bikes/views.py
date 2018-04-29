@@ -65,7 +65,7 @@ def sort(request):
 def search(request):
   template = 'bikes/bike/list.html'
   query = request.GET.get('q')
-  results = Bike.objects.filter(Q(Bike__title__icontains=query) | Q(Bike__brand__icontains=query))
+  results = Bike.objects.filter(Q(title__contains=query) | Q(brand__contains=query))
   pages = pagination(request, results, num=1)
   context = {'items':pages[0], 'page_range':pages[1],}
   return render(request, template, context)
