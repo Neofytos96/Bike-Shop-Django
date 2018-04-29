@@ -51,17 +51,10 @@
             <a href="/" class="logo">Home</a>
         </div>
         <div>
-            <!--<form method="GET" action="{% url 'bikes:search' %}">
+            <form method="GET" action="{% url 'bikes:search' %}">
                 <input name="q" value="{{ request.GET.q }}" placeholder="search..">
                 <button class="btn btn-success" type="submit">Search</button>
-            </form>-->
-            <form id="searchform" action="{% url 'blog_search_list_view' %}" method="get" accept-charset="utf-8">
-                    <button class="searchbutton" type="submit">
-                    <i class="fa fa-search"></i>
-                    </button>
-                <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
             </form>
-
         </div>
     </div>
 
