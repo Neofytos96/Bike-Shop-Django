@@ -35,7 +35,7 @@ def sort(request):
   if select_type =="all":
     return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
   elif select_type =="alphabetically":
-    if select_criteria=="High to Low":
+    if select_criteria=="Descending":
       bikes= Bike.objects.order_by("title")
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
     else:
@@ -43,7 +43,7 @@ def sort(request):
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
 
   elif select_type == "price" :
-    if select_criteria=="Low to High":
+    if select_criteria=="Ascending":
       bikes= Bike.objects.order_by("price")
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
     else:
@@ -51,7 +51,7 @@ def sort(request):
       return render(request, 'bikes/bikes/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
 
   elif select_type == "brand" :
-    if select_criteria=="Low to High":
+    if select_criteria=="Ascending":
       bikes= Bike.objects.order_by("brand")
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
     else:
