@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^order/', include('order.urls', namespace='order')),
     url(r'^reviews/', include('reviews.urls', namespace="reviews")),
+    url(r'^search/$', FilterView.as_view(filterset_class=UserFilter, template_name='search/user_list.html'), name='search'),
     url(r'^', include('bikes.urls', namespace='bikes')),
     url(r'^account/', include('account.urls', namespace='account')), 
 

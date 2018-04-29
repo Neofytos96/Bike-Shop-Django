@@ -6,3 +6,4 @@ whitenoise==3.3.1
 pillow
 celery
 mysqlclient
+django-filter==1.0.0
