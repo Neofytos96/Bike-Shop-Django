@@ -25,8 +25,8 @@ import datetime
 
 
 def review_create(request):
+    bike = Bike(request)
     #cart = Cart(request)
-    cart = Cart(request)
     #bike = get_object_or_404(Bike, id=bike_id)
     if request.user.is_authenticated():
         user_id = request.user.id
@@ -46,7 +46,7 @@ def review_create(request):
             pub_date = datetime.datetime.now()
             #review.user = current_user_object
             review = Review()
-            review.save()
+            #review.save()
             ReviewItem.objects.create(review=review,
                                          bike='bike',
                                          comment='comment',
