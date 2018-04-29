@@ -103,7 +103,7 @@ def search(request):
     query = request.GET.get('q')
 
     if query:
-        results = Bike.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
+        results = Bike.objects.filter(Q(title__icontains=query) | Q(brand__icontains=query))
     else:
         results = Bike.objects.filter(status="Published")
 
