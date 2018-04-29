@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response, get_object_or_404, render
 from django.conf import settings
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from .models import Review
+from .models import Review, ReviewItem
 from bikes.models import Bike
 from .forms import ReviewCreateForm
 import datetime
