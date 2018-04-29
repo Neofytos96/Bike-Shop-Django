@@ -35,6 +35,7 @@
         {% csrf_token %}
         <input type="submit" value="Sort">
     </form>
+    
     <div>
             <form method="GET" action="{% url 'bikes:search' %}">
                 <input name="q" value="{{request.GET.q}}" placeholder="Search...">
