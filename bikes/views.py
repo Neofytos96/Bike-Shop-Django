@@ -50,15 +50,6 @@ def sort(request):
       bikes= Bike.objects.order_by("-price")
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
 
-  elif select_type == "brand" :
-    if select_criteria=="Ascending":
-      bikes= Bike.objects.order_by("brand")
-      return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
-    else:
-      bikes= Bike.objects.order_by("-brand")
-      return render(request, 'bikes/bikes/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
-
-
-
+  
 
 
