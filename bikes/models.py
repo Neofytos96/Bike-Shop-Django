@@ -31,7 +31,7 @@ class Bike(models.Model):
     available = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ('-release_date',)
+        ordering = ('-price',)
         index_together = (('id', 'slug'),)
 
     def __str__(self):
