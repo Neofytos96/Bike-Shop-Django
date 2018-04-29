@@ -46,7 +46,7 @@ def review_create(request):
             pub_date = datetime.datetime.now()
             #review.user = current_user_object
             review = Review()
-            review.save()
+            #review.save()
             ReviewItem.objects.create(review=review,
                                          bike='bike',
                                          comment='comment',
