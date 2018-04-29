@@ -103,9 +103,9 @@ def search(request):
     query = request.GET.get('q')
 
     if query:
-        results = Post.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
+        results = Bike.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
     else:
-        results = Post.objects.filter(status="Published")
+        results = Bike.objects.filter(status="Published")
 
     pages = pagination(request, results, num=1)
 
