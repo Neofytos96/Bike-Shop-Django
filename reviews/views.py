@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response, get_object_or_404, render
 from django.conf import settings
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from .models import Review, ReviewItem
+from .models import Review
 from bikes.models import Bike
 from .forms import ReviewCreateForm
 import datetime
@@ -25,8 +25,8 @@ import datetime
 
 
 def review_create(request):
-    bike = Bike(request)
     #cart = Cart(request)
+    bike = Bike(request)
     #bike = get_object_or_404(Bike, id=bike_id)
     if request.user.is_authenticated():
         user_id = request.user.id
@@ -46,13 +46,13 @@ def review_create(request):
             pub_date = datetime.datetime.now()
             #review.user = current_user_object
             review = Review()
-            #review.save()
+            review.save()
             ReviewItem.objects.create(review=review,
                                          bike='bike',
                                          comment='comment',
                                          pub_date='quantity',
-                                         user_name='user_name')
-                                         #rating='rating')
+                                         user_name='user_name',
+                                         rating='rating')
             
             return render (request, 'reviews/reviews/created.html',{'review':review})
         else:

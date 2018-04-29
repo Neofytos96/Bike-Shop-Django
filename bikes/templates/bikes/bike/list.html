@@ -20,19 +20,6 @@
             </li>
         {% endfor %}
         </ul>
-        <form id="filter" action="{%url 'bike:sort' %}" method="post">
-            <select name="select_type">
-                <option value="all">All</option>
-                <option value="alphabetically">Alphabetically</option>
-                <option value="price">Price</option>
-            </select>
-            <select name="select_criteria">
-                <option value="High to Low">High to Low</option>
-                <option value="Low to High">Low to high</option>
-            </select>
-            {% csrf_token %}
-            <input type="submit" value="Sort">
-        </form>
     </div>
     <div id="main" class="bike-list">
 

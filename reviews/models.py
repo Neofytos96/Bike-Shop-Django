@@ -13,7 +13,7 @@ class Review(models.Model):
         (4, '4'),
         (5, '5'),
     )
-    bike = models.ForeignKey(Bike)
+    bike = models.ForeignKey(Bike, related_name='review_items')
     pub_date = models.DateTimeField('date published')
     user_name = models.CharField(max_length=40)
     comment = models.CharField(max_length=200)
