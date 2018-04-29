@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
-from example.config import pagination
+#from example.config import pagination
+from django.core.paginator import Paginator
 from .models import Brand, Bike
 from cart.forms import CartAddProductForm
 
