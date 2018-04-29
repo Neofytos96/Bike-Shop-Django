@@ -51,9 +51,9 @@
             <a href="/" class="logo">Home</a>
         </div>
         <div>
-            <form method="GET" action="{% url 'bikes:search' %}">
-                <input name="q" value="{{ request.GET.q }}" placeholder="search..">
-                <button class="btn btn-success" type="submit">Search</button>
+            <form method="GET" action=''>
+                <input type='text' name="q" placeholder="search..">
+                <input type="submit" value="Search">
             </form>
         </div>
     </div>
