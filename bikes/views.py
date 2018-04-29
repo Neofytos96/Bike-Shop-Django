@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.db.models import QuerySet
 from .models import Brand, Bike
 from cart.forms import CartAddProductForm
 
@@ -58,7 +59,14 @@ def sort(request):
       bikes= Bike.objects.order_by("-release_date")
       return render(request, 'bikes/bike/list.html', {'brand': brand,'brands': brands,'bikes': bikes})
 
-  
+
+def search(request):
+  template = 'bikes/bike/list.html'
+  query = request.GET.get('q')
+  results = Post.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
+  pages = pagination(request, results, num=1)
+  context = {'items':pages[0], 'page_range':pages[1],}
+  return render(request, template, context)
   
 
 
