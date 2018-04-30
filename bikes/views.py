@@ -100,19 +100,29 @@ def category_detail(request, slug):
 def search(request):
     template = 'bikes/bike/list.html'
 
+
     query = request.GET.get('q')
 
     if query:
-        results = Bike.objects.filter(Q(title__icontains=query))
-    else:
-        results = Bike.objects.filter(status="Published")
+        queryset_list = Bike.objects.filter(Q(title__icontains=query)).distinct()
+    #else:
+    #    results = Bike.objects.filter(status="Published")
 
-    pages = Paginator(results,10)
+    paginator = Paginator(queryset_list,10)
+    page_request_var = "page"
+    page = request.GET.get(page_request_var)
+    try: 
+      queryset = paginator.page(page)
+    except:
+      queryset = paginator.page(1)
+    except EmptyPage:
+      queryset = paginator.page(paginator.num_pages)
+
 
     context = {
-        'items': pages[0],
-        'page_range': pages[1],
-        'query': query,
+        "object_list": queryset,
+        "title": "List",
+        "page_request_var": page_request_var,
     }
     return render(request, template, context)
 
