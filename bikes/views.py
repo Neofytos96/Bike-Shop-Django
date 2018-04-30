@@ -113,7 +113,7 @@ def search(request):
     page = request.GET.get(page_request_var)
     try: 
       queryset = paginator.page(page)
-    except:
+    except PageNotAnInteger:
       queryset = paginator.page(1)
     except EmptyPage:
       queryset = paginator.page(paginator.num_pages)
