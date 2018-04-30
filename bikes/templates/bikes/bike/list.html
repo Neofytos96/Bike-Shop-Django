@@ -57,12 +57,28 @@
                 </a><br>
                 <a href="{{ bike.get_absolute_url }}">{{ bike }}</a><br>
                 ${{ bike.price }}
-                <!--{% if forloop.counter|divisibleby:3 %}
-                <br>
                 
-                {% endif %}-->
             </div>
         {% endfor %}
     </div>
+    {% for obj in object_list%}
+    <div>
+        <div id="main" class="bike-list">
+
+            <h1>Search results</h1>
+            
+                <div class="item">
+                <a href="{{ obj.get_absolute_url }}">
+                        <img src="{% if obj.image %}{{ obj.image.url }}{% else %}{% static "bikes/img/no_image.png" %}{% endif %}">
+                    </a><br>
+                    <a href="{{ obj.get_absolute_url }}">{{ obj }}</a><br>
+                    ${{ obj.price }}
+                    
+                </div>
+            
+        </div>
+        
+    </div>
+    {% endfor %}
     
 {% endblock %}
