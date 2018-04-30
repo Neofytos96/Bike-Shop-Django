@@ -107,7 +107,7 @@ def search(request):
     else:
         results = Bike.objects.filter(status="Published")
 
-    pages = pagination(request, results, num=1)
+    pages = Paginator(request, results, num=1)
 
     context = {
         'items': pages[0],
